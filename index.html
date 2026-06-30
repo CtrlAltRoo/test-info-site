@@ -28,7 +28,6 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 24px 32px; }
     @media (max-width: 768px) { header { flex-direction: column; gap: 8px; } .container { padding: 16px; } .grid-2, .grid-3 { grid-template-columns: 1fr !important; } }
 
-    /* Alert */
     .alert { border-radius: 6px; padding: 16px 20px; margin-bottom: 24px; border-left: 4px solid; }
     .alert-flip    { background: #2d1e00; border-color: var(--yellow); }
     .alert-confirm { background: #0d2018; border-color: var(--green); }
@@ -39,16 +38,13 @@
     .alert-quiet .alert-label   { color: var(--text-muted); }
     .alert p { font-size: 13px; margin-top: 8px; }
 
-    /* Sections */
     .section { margin-bottom: 32px; }
     .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
     .section-header h2 { font-size: 15px; font-weight: 600; }
 
-    /* Grids */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
-    /* Cards */
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; }
     .card-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
     .card-value { font-size: 22px; font-weight: 700; }
@@ -59,7 +55,6 @@
     .phase-distrib { background: #2d0f0f; color: var(--red); }
     .phase-reaccum { background: #0d1a2d; color: var(--blue); }
 
-    /* Colors */
     .text-green  { color: var(--green); }
     .text-red    { color: var(--red); }
     .text-yellow { color: var(--yellow); }
@@ -70,7 +65,6 @@
     .bias-bear { color: var(--red); font-weight: 600; }
     .bias-neut { color: var(--yellow); font-weight: 600; }
 
-    /* Tables */
     .table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th { background: var(--surface2); color: var(--text-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
@@ -78,24 +72,23 @@
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: var(--surface2); }
 
-    /* Trap cards */
     .trap { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--purple); border-radius: 6px; padding: 14px 16px; margin-bottom: 12px; }
     .trap-title { font-weight: 600; color: var(--purple); margin-bottom: 10px; font-size: 13px; }
     .trap-row { margin-bottom: 8px; font-size: 13px; }
     .trap-row span { color: var(--text-muted); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; display: block; margin-bottom: 2px; }
 
-    /* Step blocks */
     .step-block { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 14px 16px; margin-bottom: 12px; }
     .step-time { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--green); margin-bottom: 10px; }
     .step-block ol, .step-block ul { padding-left: 18px; }
     .step-block li { margin-bottom: 6px; font-size: 13px; }
     .step-block p { font-size: 13px; }
 
-    /* Badges */
     .badge { display: inline-block; padding: 2px 7px; border-radius: 3px; font-size: 11px; font-weight: 700; }
     .badge-high { background: #0d2018; color: var(--green); }
     .badge-med  { background: #2d1e00; color: var(--yellow); }
     .badge-low  { background: #2d0f0f; color: var(--red); }
+
+    .eod-tag { display: inline-block; background: #1a2a4a; color: var(--blue); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; margin-left: 10px; letter-spacing: 0.5px; vertical-align: middle; }
 
     footer { border-top: 1px solid var(--border); padding: 16px 32px; text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 32px; }
   </style>
@@ -103,21 +96,21 @@
 <body>
 
 <header>
-  <h1>📈 <span>Daily Futures</span> Trading Report</h1>
+  <h1>📈 <span>Daily Futures</span> Trading Report <span class="eod-tag">EOD EDITION</span></h1>
   <div class="header-meta">
-    <strong>Monday, June 30, 2026</strong>
-    ICT Smart Money Edition &nbsp;|&nbsp; Last updated: 12:00 AM ET
+    <strong>Tuesday, June 30, 2026 — End of Q2</strong>
+    ICT Smart Money Edition &nbsp;|&nbsp; Last updated: Close ET
   </div>
 </header>
 
 <div class="container">
 
-  <!-- S1: OVERNIGHT ALERT -->
+  <!-- S1: OVERNIGHT / EOD ALERT -->
   <div class="alert alert-flip">
-    <div class="alert-label">🚨 Overnight Alert — Narrative Flip</div>
-    <p><strong>What the market believed at Friday's close:</strong> US–Iran ceasefire MOU was holding. Crude sold off hard — WTI −3.92% to $70.34, Brent −4.33% to $73.74. Retail went home short oil or flat energy on "peace premium" unwind.</p>
-    <p><strong>What happened over the weekend:</strong> A drone struck the Panama-flagged <em>Ever Lovely</em> in the Strait of Hormuz Saturday. US CENTCOM launched retaliatory strikes on Iranian targets — Qeshm Island, air defense, drone/missile infrastructure. Iran's IRGC retaliated Sunday, striking US bases in Kuwait and Bahrain. Trump threatened to "militarily complete the job" and eliminate the Islamic Republic.</p>
-    <p><strong>If you held short CL from Friday's close:</strong> Re-evaluate before the open. Friday's sell-off is now re-classified as a manipulation sweep — institutions offloaded longs into the ceasefire narrative, then re-accumulated at $70.34. Monday bias is bullish CL. The Strait of Hormuz handles ~20% of global seaborne oil — that supply risk is back on the table.</p>
+    <div class="alert-label">🚨 EOD Alert — Watch Overnight: Doha Talks Shaky, CL Setup Repeating</div>
+    <p><strong>What markets priced in today:</strong> US envoy Witkoff flew to Doha for Iran peace talks. Markets sold CL ~1% to ~$71.50 on optimism that talks would resume progress. Energy sector fell −0.40%. The narrative: peace = less supply risk = lower oil.</p>
+    <p><strong>The crack in that story:</strong> Iran's foreign ministry publicly stated that <em>"no meeting at any level with the American side has been scheduled."</em> The Doha talks got off to a "shaky start." The Strait of Hormuz remains contested — Iran called the situation "sensitive and complex." This is structurally identical to the Friday setup before the weekend strikes: markets sell oil on peace narrative, geopolitical reality says otherwise.</p>
+    <p><strong>Watch overnight:</strong> Any breakdown in Doha talks, new drone incident, or Trump statement could flip CL sharply higher before tomorrow's open — a repeat of the Sunday gap. Do not carry unprotected short CL positions overnight. Additionally, today is <strong>Q2's final close</strong> — tomorrow (July 1) begins Q3, which means institutional window-dressing effects wash out at the open. Expect repositioning, particularly in tech which led today (+2.38%).</p>
   </div>
 
   <!-- S2: MANIPULATION DETECTION -->
@@ -126,53 +119,53 @@
 
     <div class="grid-3" style="margin-bottom:16px;">
       <div class="card">
-        <div class="card-label">AAII Bullish (Jun 24)</div>
-        <div class="card-value text-yellow">44.9%</div>
-        <div class="card-sub">Above historical avg of 37.5%. Retail turned bullish right at NQ's weekly peak — classic top-buyer signal.</div>
-      </div>
-      <div class="card">
-        <div class="card-label">AAII Bearish (Jun 11)</div>
-        <div class="card-value text-red">75%</div>
-        <div class="card-sub">1-year extreme fear. Institutions bought the April–May rally while retail was max-fear. Retail then bought the top.</div>
-      </div>
-      <div class="card">
         <div class="card-label">CNN Fear &amp; Greed</div>
-        <div class="card-value text-yellow">33</div>
-        <div class="card-sub">Fear territory. Retail scared after NQ −4.5% week. Selective re-accumulation environment — not a blanket buy signal.</div>
+        <div class="card-value text-yellow">27</div>
+        <div class="card-sub">Fear territory. Despite S&P 500 just posting its best quarter in years, retail sentiment is still fearful. Institutions have been quietly accumulating into retail fear all quarter.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Q2 S&P 500 Performance</div>
+        <div class="card-value text-green">Best in 6 Yrs</div>
+        <div class="card-sub">Nasdaq returned ~25% over the last 2 months of Q2 as AI trade exploded. S&P set for its best quarter since 2022. Retail was 75% bearish in June 11 AAII. They missed the entire run.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Gold Q2 Performance</div>
+        <div class="card-value text-red">−11% Q2</div>
+        <div class="card-sub">Worst quarter for gold in decades. From $5,600 ATH in January to ~$4,025 today. Retail may rush to "buy the dip" — but institutional demand has clearly stepped back.</div>
       </div>
     </div>
 
     <div class="trap">
-      <div class="trap-title">🪤 Trap #1 — CL: "The Ceasefire Will Hold — Oil Is Going Lower"</div>
-      <div class="trap-row"><span>The Narrative</span>Every major outlet on Friday framed the Iran MOU as a turning point. "Oil's war premium is gone." Retail shorted CL. WTI dropped 4% in a single session.</div>
-      <div class="trap-row"><span>Reality Check</span>Ceasefire was fragile — drone attacks on commercial shipping resumed within 24 hours. Institutions used the peace headline to offload longs to retail shorts at $74+, then re-accumulated at $70.34.</div>
-      <div class="trap-row"><span>ICT Read</span>Friday's candle = Manipulation sweep of SSL below prior consolidation. Retail trapped short. Monday = buy-side delivery.</div>
-      <div class="trap-row"><span>Exploitation Setup</span>CL retraces to $71.50–72.00 FVG zone → bullish OB on 5m → long. Target: $74–75, then $77+ if Hormuz escalates further. Stop: below $70.20.</div>
+      <div class="trap-title">🪤 Trap #1 — CL: "Doha Peace Talks = Sell Oil" (Same Setup as Friday)</div>
+      <div class="trap-row"><span>The Narrative</span>US envoy Witkoff flew to Doha. Markets immediately priced in diplomatic progress and sold CL ~1%. Energy sector down −0.40% on the day. Retail bears crude into the close.</div>
+      <div class="trap-row"><span>Reality Check</span>Iran's foreign ministry publicly denied any scheduled meeting with the US. Fox News reported talks "off to a shaky start." The Strait of Hormuz remains the core sticking point — Iran called it "sensitive and complex." This is nearly identical to last Friday's setup, which preceded the weekend strikes that gapped CL up on Monday open.</div>
+      <div class="trap-row"><span>ICT Read</span>Today's CL sell-off to $71.50 may be another Manipulation sweep — clearing SSL below the Monday recovery to re-load institutional longs at a discount before overnight news breaks. The pattern: peace narrative → retail sells → institutions buy → event breaks → CL gaps up.</div>
+      <div class="trap-row"><span>Exploitation Setup</span>Do not short CL into the close or overnight. If talks collapse tonight or a new incident occurs in the Strait, CL gaps up again. Watch for a gap above $73.00 at tomorrow's open — long on any retrace into tonight's close range ($71.50–72.00) with target $74–75.</div>
     </div>
 
     <div class="trap">
-      <div class="trap-title">🪤 Trap #2 — NQ: "AI Is Unstoppable — Buy the Dip"</div>
-      <div class="trap-row"><span>The Narrative</span>April–May media ran AI euphoria nonstop. "AI capex supercycle." "Nasdaq to new highs." Retail hit 44.9% bullish at the exact peak of the move.</div>
-      <div class="trap-row"><span>Reality Check</span>NQ −4.5% this week. Apple slid despite Micron beating earnings — good news couldn't hold the market up. Classic distribution: institutions selling into every retail buy.</div>
-      <div class="trap-row"><span>ICT Read</span>NQ in confirmed Distribution. The AI narrative was the mechanism to attract retail buying so institutions could offload. Any bounce = short entry, not a dip-buy.</div>
-      <div class="trap-row"><span>Exploitation Setup</span>NQ rallies into FVG at ~20,000–20,200 → bearish CHoCH on 5m/15m → short. Target: ~19,200 SSL pool. Stop: above the FVG high.</div>
+      <div class="trap-title">🪤 Trap #2 — NQ: "Tech Is Back — Q3 Will Be Even Better"</div>
+      <div class="trap-row"><span>The Narrative</span>Tech sector +2.38% today. NQ at 30,047. Nasdaq returned 25% in two months. Media running "AI supercycle confirmed" headlines into Q2 close. Retail buying back in after being 75% bearish and missing the run.</div>
+      <div class="trap-row"><span>Reality Check</span>Today is the last day of Q2. Quarter-end window dressing is a known institutional practice: fund managers buy their winning positions into the quarter close to inflate reported performance. Tomorrow, Q3 opens fresh — that window-dressing bid disappears. NQ at 30,047 is near the top of its dealer-defined range (28,000–31,000), with the call wall at 31,000 providing hard resistance.</div>
+      <div class="trap-row"><span>ICT Read</span>Retail buying tech today may be buying into institutional distribution. The Q2 AI rally accumulated retail FOMO buyers — Q3 opens tomorrow as the real test of whether institutions maintain positioning or begin rotating out. First hour of July 1 is critical.</div>
+      <div class="trap-row"><span>Exploitation Setup</span>Watch NQ in the first 30 minutes of July 1 open. If NQ gaps up into 30,200–30,500 FVG zone then shows a bearish CHoCH on the 15m, that's your short entry targeting the gamma flip at 29,267, then 28,000 put wall. Do not buy the open — confirm institutional intent first.</td>
     </div>
 
     <div class="trap">
-      <div class="trap-title">🪤 Trap #3 — "Extreme Fear = Buy Everything"</div>
-      <div class="trap-row"><span>The Narrative</span>Fear &amp; Greed at 33. AAII was 75% bearish two weeks ago. Social media is full of crash calls. Retail either panic-selling or waiting on the sidelines.</div>
-      <div class="trap-row"><span>Reality Check</span>Extreme fear IS historically contrarian — but selectively. Institutions are accumulating Gold, Healthcare, Defense while still distributing tech. This is not a blanket "buy the dip" setup.</div>
-      <div class="trap-row"><span>ICT Read</span>Selective re-accumulation environment. Both "everything crashes" and "buy NQ dip" are the two retail traps. The real institutional move is defensive rotation.</div>
-      <div class="trap-row"><span>Exploitation Setup</span>Buy GC dips into $5,350–5,400 OB. Buy XLV/XLE on confirmation. Short NQ bounces. Ignore blanket fear narratives pulling you toward either extreme.</div>
+      <div class="trap-title">🪤 Trap #3 — GC: "Gold Crashed 28% — Historic Dip Buy Opportunity"</div>
+      <div class="trap-row"><span>The Narrative</span>Gold fell from $5,600 ATH in January to $4,025 today — its worst quarterly performance in decades. Financial media now calling it "oversold" and a generational buying opportunity. Retail FOMO incoming.</div>
+      <div class="trap-row"><span>Reality Check</span>Gold fell because the Iran war safe-haven premium is being priced out as ceasefire talks progress. If the Doha talks succeed and the Strait of Hormuz reopens, gold loses its primary Q1 driver. COT data showed large spec longs getting reduced throughout Q2. The "dip buy" narrative serves institutions looking to offload remaining longs to retail buyers.</div>
+      <div class="trap-row"><span>ICT Read</span>Gold likely in continued Distribution/Correction. The $4,025 area needs to show a clear BOS to the upside and CHoCH before assuming re-accumulation. Until then, treat bounces as sell opportunities, not long entries.</div>
+      <div class="trap-row"><span>Exploitation Setup</span>Wait for GC to show a confirmed BOS above a prior swing high on the 4H chart before entering long. Any rally into $4,150–4,200 without a structure break = short opportunity targeting $3,900 SSL zone. Don't catch the falling knife on media "generational buy" calls.</div>
     </div>
 
     <div class="card" style="margin-top:4px;">
       <div class="card-label" style="margin-bottom:10px;">What Smart Money Appears to Be Doing</div>
       <table>
-        <tr><td style="width:160px;" class="text-red"><strong>Distributing</strong></td><td>NQ / tech — selling into every AI narrative relief bounce</td></tr>
-        <tr><td class="text-green"><strong>Accumulating</strong></td><td>Gold — letting retail sell the ATH pullback, loading at $5,350–5,400 OB demand zone</td></tr>
-        <tr><td class="text-blue"><strong>Re-loading longs</strong></td><td>Crude oil — offloaded at $74+ into the ceasefire narrative, re-entering after the $70.34 manipulation sweep</td></tr>
-        <tr><td class="text-green"><strong>Rotating into</strong></td><td>Healthcare &amp; Defense — classic institutional positioning during geopolitical escalation + tech fatigue</td></tr>
+        <tr><td style="width:160px;" class="text-yellow"><strong>Window Dressing</strong></td><td>Institutions inflating Q2 winners (tech, NQ) into today's close. This bid disappears at Q3 open tomorrow — watch for reversal.</td></tr>
+        <tr><td class="text-yellow"><strong>Accumulating CL?</strong></td><td>Possibly re-loading CL longs into today's peace-talk sell-off — same playbook as last Friday before the weekend strikes. Pattern repeating.</td></tr>
+        <tr><td class="text-red"><strong>Distributing GC</strong></td><td>Gold's worst quarter in decades suggests institutional offloading throughout Q2 into retail safe-haven buyers. Still ongoing.</td></tr>
+        <tr><td class="text-blue"><strong>Watching Q3 open</strong></td><td>Real institutional Q3 positioning begins tomorrow. Today's moves may be noise. The first 30 min of July 1 is the tell for the next month's direction.</td></tr>
       </table>
     </div>
   </div>
@@ -184,12 +177,12 @@
       <table>
         <thead><tr><th>Event</th><th>Status</th><th>Assets</th><th>Bias Shift</th></tr></thead>
         <tbody>
-          <tr><td><strong>US–Iran / Strait of Hormuz</strong></td><td>🔴 Escalating</td><td>CL, Brent, GC, ES</td><td class="text-green">CL bullish flip. GC safe-haven bid. ES risk-off pressure.</td></tr>
-          <tr><td><strong>Iran IRGC strikes Kuwait/Bahrain</strong></td><td>🔴 Active</td><td>VIX, GC, ITA</td><td>VIX likely gaps up. Defense names bid. Gold safe-haven.</td></tr>
-          <tr><td><strong>Trump escalation rhetoric</strong></td><td>🔴 Active</td><td>All markets</td><td>Binary risk — any new statement = immediate vol spike across the board.</td></tr>
-          <tr><td><strong>Russia–Ukraine</strong></td><td>🟡 Watch</td><td>Wheat, NG</td><td>Secondary risk. Could re-ignite. Monitor wheat futures.</td></tr>
-          <tr><td><strong>China–Taiwan</strong></td><td>🟡 Watch</td><td>NQ, SOX, GC</td><td>Semiconductor supply risk. Tail risk alongside NQ distribution thesis.</td></tr>
-          <tr><td><strong>Fed / July Meeting</strong></td><td>🟡 Watch</td><td>ES, NQ, Bonds</td><td>Rising oil → inflation → hawkish Fed → additional tech headwind.</td></tr>
+          <tr><td><strong>US–Iran Doha Peace Talks</strong></td><td>🟡 Shaky / Watch</td><td>CL, Brent, GC</td><td>Talks "off to shaky start." Iran denied direct US meeting. Ceasefire fragile — any breakdown = CL spikes overnight.</td></tr>
+          <tr><td><strong>Strait of Hormuz Tension</strong></td><td>🔴 Active</td><td>CL, Brent, shipping</td><td>Iran calls it "sensitive and complex." ~20% of global oil flows through here. Not resolved despite ceasefire MOU.</td></tr>
+          <tr><td><strong>Trump escalation risk</strong></td><td>🟡 Watch</td><td>All markets</td><td>If Doha talks fail publicly, expect a Trump statement that moves markets. Binary overnight risk.</td></tr>
+          <tr><td><strong>Q3 Institutional Repositioning</strong></td><td>🟡 Watch</td><td>NQ, ES, sectors</td><td>Not geopolitical, but macro: Q3 starts tomorrow. Window dressing ends. Real positioning begins. Expect tech volatility at open.</td></tr>
+          <tr><td><strong>Russia–Ukraine</strong></td><td>🟡 Watch</td><td>Wheat, NG, Europe</td><td>Europe gas storage at 30% after harsh winter. LNG disruptions from Iran war compound pressure. Monitor NG futures.</td></tr>
+          <tr><td><strong>Fed — July Meeting</strong></td><td>🟡 Watch</td><td>ES, NQ, Bonds</td><td>If Iran peace progresses → lower oil → lower inflation → rate cut expectation revives → potential tech tailwind. But fragile.</td></tr>
         </tbody>
       </table>
     </div>
@@ -197,61 +190,61 @@
 
   <!-- S4: ICT PHASE -->
   <div class="section">
-    <div class="section-header"><span>🧠</span><h2>ICT Market Phase Assessment</h2></div>
+    <div class="section-header"><span>🧠</span><h2>ICT Market Phase Assessment — EOD June 30</h2></div>
     <div class="grid-2">
       <div class="card">
         <div class="card-label">WTI Crude (CL)</div>
-        <div class="card-value">$70.34</div>
-        <div class="card-phase phase-reaccum">🔄 Manipulation → Re-Accumulation</div>
-        <div class="card-sub" style="margin-top:8px;">Friday's SSL sweep at $70.34 = manipulation complete. Monday: buy-side delivery. Long OB at $71.50–72.00. BOS above $74 confirms bullish phase shift.</div>
+        <div class="card-value">~$71.50</div>
+        <div class="card-phase phase-manip">🟡 Potential Manipulation</div>
+        <div class="card-sub" style="margin-top:8px;">Today's ~1% sell on Doha peace narrative mirrors last Friday's setup exactly. Institutions may be sweeping SSL again at $71.50 before overnight news moves it higher. If Doha talks collapse tonight, CL gaps up — potentially re-entering Re-Accumulation phase. BOS above $73.50 tomorrow = confirmation.</div>
       </div>
       <div class="card">
         <div class="card-label">Gold (GC)</div>
-        <div class="card-value">~$5,420</div>
-        <div class="card-phase phase-accum">🟢 Re-Accumulation</div>
-        <div class="card-sub" style="margin-top:8px;">HTF bullish intact. Retracing into $5,350–5,400 OB demand zone. Iran safe-haven tailwind. Target: $5,500–5,600 ATH retest.</div>
+        <div class="card-value">~$4,025</div>
+        <div class="card-phase phase-distrib">🔴 Distribution / Correction</div>
+        <div class="card-sub" style="margin-top:8px;">Worst Q2 in decades. Down ~28% from $5,600 January ATH. No confirmed BOS to the upside yet. Treat bounces as sell opportunities until 4H structure changes. Key SSL below: $3,900. Do not buy "generational dip" media calls without structural confirmation.</div>
       </div>
       <div class="card">
         <div class="card-label">Nasdaq (NQ)</div>
-        <div class="card-value">~19,800</div>
-        <div class="card-phase phase-distrib">🔴 Distribution</div>
-        <div class="card-sub" style="margin-top:8px;">Short every FVG bounce. BSL above ~20,200 = manipulation wick target before continuation lower. CHoCH on 15m = entry trigger. SSL target: ~19,200.</div>
+        <div class="card-value">~30,047</div>
+        <div class="card-phase phase-manip">🟡 Q2 Window Dressing / Watch Q3 Open</div>
+        <div class="card-sub" style="margin-top:8px;">Tech +2.38% today likely driven by quarter-end window dressing. NQ near top of dealer range (28,000–31,000), call wall at 31,000. Gamma flip at 29,267. Tomorrow's Q3 open is the real tell — if NQ fades in first 30 min, that's distribution beginning. CHoCH on 15m below 29,800 = short signal.</div>
       </div>
       <div class="card">
         <div class="card-label">S&amp;P 500 (ES)</div>
-        <div class="card-value">~5,460</div>
-        <div class="card-phase phase-manip">🟡 Late Distribution / Chop</div>
-        <div class="card-sub" style="margin-top:8px;">Holding better than NQ = active SMT divergence. ES holds PDL while NQ breaks lower → long ES scalp. Both break → short, target next SSL below.</div>
+        <div class="card-value">~7,440+</div>
+        <div class="card-phase phase-manip">🟡 Q2 Peak / Q3 Open Watch</div>
+        <div class="card-sub" style="margin-top:8px;">Best quarter in 6 years. Closed near highs. Tomorrow begins fresh — watch whether ES holds above Monday's close (7,440) or gives back gains as window dressing unwinds. SMT vs NQ remains the key divergence signal for July 1 direction.</div>
       </div>
       <div class="card">
         <div class="card-label">Silver (SI)</div>
-        <div class="card-value">Pullback from $120 ATH</div>
-        <div class="card-phase phase-accum">🟢 Re-Accumulation</div>
-        <div class="card-sub" style="margin-top:8px;">Following GC. Buy dips into demand zone. Do not chase the gap open — wait for the SSL sweep first then look for CHoCH.</div>
+        <div class="card-value">Following GC lower</div>
+        <div class="card-phase phase-distrib">🔴 Distribution</div>
+        <div class="card-sub" style="margin-top:8px;">Tracking gold's Q2 decline. No structural buy signal. Treat as GC proxy — wait for GC to confirm reversal before entering SI long.</div>
       </div>
       <div class="card">
         <div class="card-label">Bitcoin (BTC)</div>
         <div class="card-value">—</div>
-        <div class="card-phase phase-manip">🟡 Ranging / Indeterminate</div>
-        <div class="card-sub" style="margin-top:8px;">Watch whether BTC catches a safe-haven bid or sells with risk assets. No position until NY open shows direction.</div>
+        <div class="card-phase phase-manip">🟡 Ranging</div>
+        <div class="card-sub" style="margin-top:8px;">Tracking risk-on sentiment. If NQ fades Q3 open, BTC likely follows. If tech holds, BTC may bid. No independent setup — follow the macro risk tone tomorrow.</div>
       </div>
     </div>
   </div>
 
   <!-- S5: SECTORS -->
   <div class="section">
-    <div class="section-header"><span>🏦</span><h2>Sector Probability Assessment</h2></div>
+    <div class="section-header"><span>🏦</span><h2>Sector Assessment — EOD June 30 / Q3 Outlook</h2></div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Sector</th><th>Move?</th><th>Bias</th><th>Reasoning</th></tr></thead>
+        <thead><tr><th>Sector</th><th>Today</th><th>Q3 Bias</th><th>Reasoning</th></tr></thead>
         <tbody>
-          <tr><td><strong>Energy (XLE / CL)</strong></td><td><span class="badge badge-high">Very High</span></td><td class="bias-bull">↑ Bullish</td><td>Iran narrative flip. Buy CL retraces into FVG, not the gap open. XLE likely gaps up Monday.</td></tr>
-          <tr><td><strong>Defense (ITA / RTX)</strong></td><td><span class="badge badge-high">Very High</span></td><td class="bias-bull">↑ Bullish</td><td>Active US military strikes = institutional defense inflows. High conviction long.</td></tr>
-          <tr><td><strong>Precious Metals (GC / SI)</strong></td><td><span class="badge badge-high">Very High</span></td><td class="bias-bull">↑ Bullish</td><td>Safe-haven demand + re-accumulation OB in play. Buy first pullback, not the open.</td></tr>
-          <tr><td><strong>Healthcare (XLV)</strong></td><td><span class="badge badge-high">High</span></td><td class="bias-bull">↑ Bullish</td><td>Defensive rotation + geopolitical risk-off. XLV +3% Friday. Buy dips into Friday's OB.</td></tr>
-          <tr><td><strong>Technology (XLK / NQ)</strong></td><td><span class="badge badge-high">High</span></td><td class="bias-bear">↓ Bearish</td><td>Distribution ongoing. Geopolitical risk-off compounds AI fatigue. Short FVG bounces only.</td></tr>
-          <tr><td><strong>Financials (XLF)</strong></td><td><span class="badge badge-med">Moderate</span></td><td class="bias-neut">→ Mixed</td><td>Higher oil = inflation = hawkish Fed = yield movement. Choppy — no clean setup.</td></tr>
-          <tr><td><strong>Industrials / Materials</strong></td><td><span class="badge badge-low">Low</span></td><td class="bias-neut">→ Sit Out</td><td>No clear institutional narrative. Skip entirely.</td></tr>
+          <tr><td><strong>Technology (XLK / NQ)</strong></td><td class="text-green">+2.38%</td><td class="bias-neut">→ Watch Q3 Open</td><td>Today's gain likely window dressing. NQ near call wall resistance (31,000). Q3 open is the real directional signal. If it fades in first 30 min, distribution begins.</td></tr>
+          <tr><td><strong>Energy (XLE / CL)</strong></td><td class="text-red">−0.40%</td><td class="bias-neut">→ Overnight Risk</td><td>Sold on Doha peace optimism. But talks shaky and Iran denied direct US meeting. CL short into overnight = high gap risk. Watch for repeat of Sunday setup.</td></tr>
+          <tr><td><strong>Healthcare (XLV)</strong></td><td class="text-red">−0.87%</td><td class="bias-bull">↑ Bullish on Weakness</td><td>Gave back some of last week's defensive gains as tech led today. Structural defensive rotation thesis intact — buy pullbacks.</td></tr>
+          <tr><td><strong>Defense (ITA / RTX)</strong></td><td><span class="text-muted">Mixed</span></td><td class="bias-bull">↑ Bullish</td><td>Iran conflict not resolved. Ceasefire fragile. Defense names remain institutionally bid on any escalation. Asymmetric upside if Doha talks collapse.</td></tr>
+          <tr><td><strong>Precious Metals (GC / SI)</strong></td><td class="text-red">Declining</td><td class="bias-bear">↓ Bearish</td><td>Worst Q2 in decades. Iran safe-haven premium unwinding. No structural reversal signal yet. Avoid longs until BOS on 4H.</td></tr>
+          <tr><td><strong>Financials (XLF)</strong></td><td><span class="text-muted">Flat</span></td><td class="bias-neut">→ Mixed</td><td>Rate trajectory unclear. If peace talks progress = lower oil = lower inflation = rate cut hopes = yield compression. Complex. Sit out.</td></tr>
+          <tr><td><strong>Industrials / Materials</strong></td><td><span class="text-muted">Flat</span></td><td class="bias-low">🔴 Low</td><td>No institutional narrative. Skip Q3 open entirely for this sector.</td></tr>
         </tbody>
       </table>
     </div>
@@ -259,42 +252,50 @@
 
   <!-- S6: ACTIONABLE STEPS -->
   <div class="section">
-    <div class="section-header"><span>✅</span><h2>ICT Actionable Steps for Monday</h2></div>
+    <div class="section-header"><span>✅</span><h2>ICT Actionable Steps — Q3 Open (July 1, Tuesday)</h2></div>
 
     <div class="step-block">
-      <div class="step-time">Pre-Market Prep — 6:00–7:00 AM ET</div>
+      <div class="step-time">Tonight — Overnight Watch (Critical)</div>
+      <ul>
+        <li><strong>Monitor Doha talks outcome.</strong> If Iran publicly walks out or denies a meeting (which they already started doing), CL will gap higher at Sunday globex open. Set a price alert on CL above $73.00.</li>
+        <li><strong>No short CL positions overnight.</strong> The pattern from last Friday is repeating. Reward/risk is terrible for shorts given overnight binary geopolitical risk.</li>
+        <li><strong>Check for any Trump statements or CENTCOM activity</strong> before the July 1 open. This is the #1 overnight risk driver.</li>
+      </ul>
+    </div>
+
+    <div class="step-block">
+      <div class="step-time">Pre-Market Prep — 6:00–7:00 AM ET (July 1)</div>
       <ol>
-        <li><strong>Kill any short CL bias from Friday.</strong> The geopolitical situation has completely flipped the trade.</li>
-        <li><strong>Check globex pricing.</strong> If CL is already up $3+, the gap is live — find the pullback entry, don't chase. Mark the globex high as a potential BSL target.</li>
-        <li><strong>Mark all HTF levels:</strong> Prior week high/low, Friday's PDH/PDL (CL $70.34, GC ~$5,420, NQ ~19,800), 50% equilibrium on each. These are your reference points for Monday's delivery.</li>
-        <li><strong>Identify FVGs:</strong> CL gap between Thursday close and Friday's lower open. NQ FVG from this week's selloff at ~20,000–20,200. Primary entry zones for the session.</li>
-        <li><strong>SMT divergence setup:</strong> ES and NQ side by side on your screen. ES holds higher while NQ breaks lower = long ES scalp. Both break together = short NQ only, targeting ~19,200 SSL.</li>
+        <li><strong>Q3 reset.</strong> Today's window dressing is gone. Mark fresh levels: June 30 close (PDH/PDL), weekly open, 50% EQ on NQ and ES. These are your new reference points.</li>
+        <li><strong>Check globex gap on NQ.</strong> If NQ gapped down overnight from the 30,047 close, the gap itself is your first trade — either a gap fill to the upside or a gap-and-go to the downside. Direction tells you Q3 institutional intent.</li>
+        <li><strong>Check CL gap.</strong> If Doha talks deteriorated overnight, CL may be +$2–3 at open. Same entry logic: wait for the retrace into $72.00–72.50 zone, look for bullish OB on 5m.</li>
+        <li><strong>Mark NQ gamma levels:</strong> Support: 28,000 (put wall), Gamma flip: 29,267, Resistance: 31,000 (call wall). These define tomorrow's range structure.</li>
       </ol>
     </div>
 
     <div class="step-block">
-      <div class="step-time">London Kill Zone — 2:00–5:00 AM ET (Observe Only)</div>
-      <p>London will react emotionally to the Iran news — expect CL and GC to spike early, possibly followed by a partial retracement as London books profit. <strong>That retracement is your NY entry point — not a reason to short.</strong> If NQ gaps lower before NY, watch whether the gap fills or extends to read the NY session bias. Do not trade this session without a fully confirmed setup.</p>
+      <div class="step-time">London Kill Zone — 2:00–5:00 AM ET (Observe)</div>
+      <p>London opens Q3. First institutional session of the new quarter — their positioning moves matter. Watch direction of NQ and ES in London: if London sells tech, that confirms Q3 distribution is starting. If London buys, window dressing may extend one more day. Do not trade this session — observe and form your NY bias.</p>
     </div>
 
     <div class="step-block">
       <div class="step-time">NY Open Kill Zone — 7:00–10:00 AM ET (Primary Window)</div>
       <ol>
-        <li><strong>CL Long:</strong> Wait for retrace to $71.50–72.00 FVG zone → bullish OB on 5m → entry. Target: $74–75 initial, $77+ if Hormuz worsens. Stop: below $70.20.</li>
-        <li><strong>GC Long:</strong> Retrace to $5,350–5,400 OB → CHoCH on 5m → entry. Do NOT buy the gap open. Wait for the SSL sweep below the overnight low, then look for the reversal. Target: $5,500.</li>
-        <li><strong>NQ Short:</strong> Rally into FVG at ~20,000–20,200 → bearish CHoCH on 5m/15m → short. Target: ~19,200 SSL pool. Highest conviction trade of the day if it sets up cleanly.</li>
-        <li><strong>Silver Bullet (9:50–10:10 AM):</strong> On CL or NQ — watch for a sweep of a liquidity pool (wick above overnight high or below overnight low), then immediate reversal into a 1m FVG. Cleanest risk/reward window of the session.</li>
+        <li><strong>NQ Setup A — Short:</strong> If NQ rallies into 30,200–30,500 (FVG / Q2 close range) in first 30 min → bearish CHoCH on 15m → short targeting gamma flip at 29,267. This is the Q3 window-dressing unwind play. Stop: above 30,500.</li>
+        <li><strong>NQ Setup B — Long:</strong> If NQ gaps down to gamma flip (29,267) or put wall (28,000) overnight and holds → bullish CHoCH on 5m → long scalp back to 30,000. Only valid if London session also showed buyers.</li>
+        <li><strong>CL Long (if overnight gap):</strong> If CL gaps up on Doha collapse → retrace to tonight's close ($71.50) → bullish OB on 5m → long targeting $74–75.</li>
+        <li><strong>Silver Bullet (9:50–10:10 AM):</strong> On whichever is cleanest — NQ or CL. Liquidity sweep → reversal into 1m FVG. Best risk/reward of the session.</li>
       </ol>
     </div>
 
     <div class="step-block">
       <div class="step-time">NY Lunch — 12:00–1:30 PM ET (Stand Down)</div>
-      <p>Move all stops to breakeven. A Trump statement or CENTCOM update during thin liquidity can spike CL or crash NQ in seconds. No new entries. Keep a news feed open during this window.</p>
+      <p>First day of Q3 lunches are particularly thin as large institutions settle positions. Move stops to breakeven. Watch for any Iran/Doha news that breaks during this window — it will have outsized impact on thin liquidity.</p>
     </div>
 
     <div class="step-block">
       <div class="step-time">NY Afternoon — 1:30–4:00 PM ET</div>
-      <p>If CL held morning gains → look for slow grind toward $74 into the close. If NQ continued lower → watch for a final liquidity run into the prior swing low (distribution completion). <strong>Take partial profits before 3:30 PM. Do not hold leveraged CL or GC overnight</strong> while the Iran conflict is live — gap risk in both directions is extreme.</p>
+      <p>If NQ sold off in the morning (Q3 distribution thesis confirmed), watch for a dead-cat bounce into 30,000 in the afternoon — that's your second short entry of the day, not a reason to go long. If NQ held and bought all day, the Q2 momentum is extending into Q3 — step aside and re-assess tomorrow. Do not force a trade on a low-conviction read.</p>
     </div>
   </div>
 
@@ -305,11 +306,11 @@
       <table>
         <thead><tr><th style="width:180px;">Rule</th><th>Detail</th></tr></thead>
         <tbody>
-          <tr><td><strong>Position Sizing</strong></td><td>Max <strong>0.5% per trade today</strong> — half normal. Active military conflict = binary risk. Resume 1% once Iran stabilizes.</td></tr>
-          <tr><td><strong>Narrative Discipline</strong></td><td>If a major outlet runs a bullish CL article by 10 AM, that's often the signal institutions are preparing to distribute freshly re-loaded longs into retail buyers. Note it. Don't chase.</td></tr>
-          <tr><td><strong>Upcoming Catalysts</strong></td><td>July Fed meeting, CPI/PCE releases this week, State Department / CENTCOM Iran briefings. Any of these can invalidate intraday setups mid-trade.</td></tr>
-          <tr><td><strong>ICT Mindset</strong></td><td>Before every trade ask: "Am I the one being manipulated, or am I trading with the institution?" Fading a strong move because it "feels extended" = you're the retail side of the trade. Wait for structure to confirm — don't predict.</td></tr>
-          <tr><td><strong>Overnight Hold</strong></td><td>Do not hold leveraged CL or GC overnight while the Iran conflict is active. Gap risk in both directions is extreme. Take profits before the close.</td></tr>
+          <tr><td><strong>Q3 Open Sizing</strong></td><td>First day of the quarter = elevated chop risk as institutions rebalance. Max 0.5% per trade in the first hour of July 1. Resume 1% sizing once direction is confirmed post 9:30.</td></tr>
+          <tr><td><strong>The Window Dressing Trap</strong></td><td>Today's tech rally felt real but was likely artificial. The number one mistake tomorrow is buying NQ because "it went up Friday and today." Window dressing is over. Trade what you see, not what happened last week.</td></tr>
+          <tr><td><strong>Doha Overnight Risk</strong></td><td>Zero short CL overnight. The pattern is identical to last Friday. The asymmetry strongly favors longs if talks fail — gap-up risk far exceeds gap-down risk given Iran's public posture.</td></tr>
+          <tr><td><strong>Upcoming Catalysts</strong></td><td>July 1 Q3 open (institutional repositioning), ongoing Doha Iran talks, any Fed speaker early in July, next CFTC COT report Friday. These define the first week of Q3 direction.</td></tr>
+          <tr><td><strong>ICT Mindset — Q3</strong></td><td>Q2 is closed. Every position, every bias, every narrative from Q2 is now stale. Institutions start with a clean slate on July 1. So should you. The market doesn't care that tech went up 25% last quarter — it only cares about where the next liquidity pool is.</td></tr>
         </tbody>
       </table>
     </div>
@@ -317,18 +318,18 @@
 
   <!-- S8: SNAPSHOT -->
   <div class="section">
-    <div class="section-header"><span>📊</span><h2>Market Snapshot</h2></div>
+    <div class="section-header"><span>📊</span><h2>Market Snapshot — June 30 EOD</h2></div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Asset</th><th>Last Close</th><th>Move</th><th>Today's Bias</th><th>Key Levels</th></tr></thead>
+        <thead><tr><th>Asset</th><th>EOD Price</th><th>Today's Move</th><th>Q3 Bias</th><th>Key Levels</th></tr></thead>
         <tbody>
-          <tr><td><strong>WTI Crude (CL)</strong></td><td>$70.34</td><td class="text-red">−3.92%</td><td class="bias-bull">↑ Bullish FLIP</td><td>Long OB: $71.50–72 | Target: $74–77 | Stop: $70.20</td></tr>
-          <tr><td><strong>Brent Crude</strong></td><td>$73.74</td><td class="text-red">−4.33%</td><td class="bias-bull">↑ Bullish FLIP</td><td>OB reclaim zone: $75–76</td></tr>
-          <tr><td><strong>Gold (GC)</strong></td><td>~$5,420</td><td class="text-yellow">Pullback</td><td class="bias-bull">↑ Bullish</td><td>OB demand: $5,350–5,400 | Target: $5,500</td></tr>
-          <tr><td><strong>Silver (SI)</strong></td><td>Pullback from $120 ATH</td><td>—</td><td class="bias-bull">↑ Bullish</td><td>Follow GC. Buy dips only — not the gap open.</td></tr>
-          <tr><td><strong>Nasdaq (NQ)</strong></td><td>~19,800</td><td class="text-red">−4.5% wk</td><td class="bias-bear">↓ Bearish</td><td>Short FVG: ~20,000–20,200 | SSL target: ~19,200</td></tr>
-          <tr><td><strong>S&amp;P 500 (ES)</strong></td><td>~5,460</td><td class="text-red">−0.72%</td><td class="bias-neut">→ Cautious</td><td>SMT vs NQ divergence key. Watch PDL hold.</td></tr>
-          <tr><td><strong>BTC Futures</strong></td><td>—</td><td>—</td><td class="bias-neut">→ Wait</td><td>No position until NY open shows direction.</td></tr>
+          <tr><td><strong>WTI Crude (CL)</strong></td><td>~$71.50</td><td class="text-red">−1.0%</td><td class="bias-neut">→ Overnight Watch</td><td>No short overnight. Gap watch above $73. Long OB: $71.50–72 if gap up.</td></tr>
+          <tr><td><strong>Brent Crude</strong></td><td>~$73.50</td><td class="text-red">~−1.0%</td><td class="bias-neut">→ Overnight Watch</td><td>Follows WTI. Same Doha risk profile.</td></tr>
+          <tr><td><strong>Gold (GC)</strong></td><td>~$4,025</td><td class="text-red">Q2: −11%</td><td class="bias-bear">↓ Bearish</td><td>Distribution ongoing. No long until BOS on 4H. SSL target: $3,900.</td></tr>
+          <tr><td><strong>Silver (SI)</strong></td><td>Following GC</td><td class="text-red">Declining</td><td class="bias-bear">↓ Bearish</td><td>Proxy for GC. Same rules apply.</td></tr>
+          <tr><td><strong>Nasdaq (NQ)</strong></td><td>~30,047</td><td class="text-green">+2.38% (tech)</td><td class="bias-neut">→ Q3 Open Watch</td><td>Call wall: 31,000 | Gamma flip: 29,267 | Put wall: 28,000</td></tr>
+          <tr><td><strong>S&amp;P 500 (ES)</strong></td><td>~7,440</td><td class="text-green">Best Q2 in 6yr</td><td class="bias-neut">→ Q3 Open Watch</td><td>SMT vs NQ tomorrow key. PDL: today's close. Watch first 30 min of Q3.</td></tr>
+          <tr><td><strong>BTC Futures</strong></td><td>—</td><td>—</td><td class="bias-neut">→ Follow Macro</td><td>Tracks risk sentiment. Follow NQ direction at Q3 open.</td></tr>
         </tbody>
       </table>
     </div>
@@ -337,7 +338,7 @@
 </div>
 
 <footer>
-  ICT Smart Money analysis for educational and informational purposes only. Not financial advice. Trade at your own risk. Verify all news before acting.
+  ICT Smart Money analysis for educational and informational purposes only. Not financial advice. Trade at your own risk. Verify all news before acting. Sources: TheStreet, Fox News, CBS News, CNN, CNBC, HDFCSky, Fortune, Alexandria Capital, Schwab, Barchart.
 </footer>
 
 </body>
